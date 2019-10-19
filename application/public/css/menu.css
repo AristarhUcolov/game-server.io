@@ -1,0 +1,132 @@
+.menu_body {
+    /* Перспектива */
+    -webkit-perspective: 1500px;
+    -moz-perspective: 1500px;
+    -ms-perspective: 1500px;
+    -o-perspective: 1500px;
+    perspective: 1500px;
+}
+
+.menu, .page_content {
+    /*  Схема рисования, переход и трансформация */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -moz-transition: -moz-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    -o-transition: -o-transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+/* Основной элемент, который появляется сверху */
+.menu {
+    background-color: #002edb;
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 148px;
+    z-index: 1;
+
+    /* трансформации */
+    -webkit-transform: rotateX(-45deg) translateY(-95%);
+    -moz-transform: rotateX(-45deg) translateY(-95%);
+    -ms-transform: rotateX(-45deg) translateY(-95%);
+    -o-transform: rotateX(-45deg) translateY(-95%);
+    transform: rotateX(-45deg) translateY(-95%);
+}
+
+/* Изменяем цвет фона и вращаем основное меню при наведении курсора */
+.menu:hover {
+    background-color: #4169ff;
+
+    /* Трансформация */
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+/* Основное меню - свойства UL-LI */
+.menu ul {
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 1036px;
+}
+.menu ul li {
+    float: left;
+    list-style: none outside none;
+    margin: 10px;
+
+    /* Переход */
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.menu ul li:hover {
+    background-color: #7e00d6;
+
+    /* Скруглегния углов рамки */
+    -webkit-border-radius: 64px;
+    -moz-border-radius: 64px;
+    -ms-border-radius: 64px;
+    -o-border-radius: 64px;
+    border-radius: 64px;
+}
+
+/* Остальное содержанние страницы */
+.page_content {
+    padding: 20px 0 0;
+}
+
+/* При наведении курсора на меню сдвигаем вниз page_content */
+.menu:hover ~ .page_content {
+    /* CSS3 transform */
+    -webkit-transform: rotateX(-45deg) translateY(80px);
+    -moz-transform: rotateX(-45deg) translateY(80px);
+    -ms-transform: rotateX(-45deg) translateY(80px);
+    -o-transform: rotateX(-45deg) translateY(80px);
+    transform: rotateX(-45deg) translateY(80px);
+}
+
+/* Элемент тени страницы (невидимый по умолчанию) */
+.page_content .shade {
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1000;
+
+    /* Линейный градиент */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%);
+    background: -webkit-gradient(linear, top top, bottom top, color-stop(0%,rgba(0,0,0,0.15)), color-stop(100%,rgba(0,0,0,0.65)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.65) 100%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.65) 100%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.65) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.65) 100%);
+
+    /* Переход */
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+/* При навдении курсора мыши на меню выводим тень */
+.menu:hover ~ .page_content .shade {
+    opacity: 1;
+    visibility: visible;
+}

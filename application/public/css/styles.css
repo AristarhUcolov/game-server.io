@@ -1,0 +1,30 @@
+/*!
+ *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+.alert {
+	margin-top: 24px;
+	border-radius: 0;
+}
+.alert-danger {
+	border-color: #FF3B30;
+	color: #F7F7F7;
+	background: rgba(255, 59, 48, 0.25);
+}
+.alert-success {
+	border-color: #4CD964;
+	color: #F7F7F7;
+	background: rgba(76, 217, 100, 0.25);
+}
+#newsletter-success, #newsletter-error, #contact-success, #contact-error {
+	display: none;
+}
+.ketchup-error ul {
+	color: #F7F7F7;
+	background: #FF3B30;
+	background: rgba(255, 59, 48, 0.75);
+}
+.ketchup-error span {
+	border-top-color: #FF3B30;
+	border-top-color: rgba(255, 59, 48, 0.75);
+}

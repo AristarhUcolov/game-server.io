@@ -1,0 +1,17 @@
+# Установка кодировки
+AddDefaultCharset UTF-8
+
+# Запрет листинга директории
+Options -Indexes
+
+RewriteEngine on 
+
+# Редирект с поддоменов
+#RewriteCond %{HTTP_HOST} ^cp.ed-fun.ru
+#RewriteRule (.*) http://cp.ed-fun.ru/$1 [R=301,L]
+
+# Настройки ЧПУ
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?action=$1 [L,QSA]
